@@ -1,5 +1,4 @@
 
-/* ----------------------------------------submit button-------------------------- */
 
 /* ----------------------------------------end of submit button-------------------------- */
 *{
@@ -223,28 +222,31 @@ nav ul li a:hover::after{
 
 /* -------services--------_ */
 
-#services{
+#services {
     padding: 3px;
-    /* margin: 1px 20px 30px 4px; */
+    margin: 1px 20px 30px 4px;
     margin-bottom: 40px;
 }
-.service-list{
+
+.service-list {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(25px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     margin: 10px;
     grid-gap: 30px;
     border-radius: 40px;
     background: linear-gradient(145deg, #363535, #1a111168);
-    box-shadow:  10px 10px 20px #301e1e,             -10px -10px 20px #2c2626;
+    box-shadow: 10px 10px 20px #301e1e, -10px -10px 20px #2c2626;
     -webkit-border-radius: 40px;
     -moz-border-radius: 40px;
     -ms-border-radius: 40px;
     -o-border-radius: 40px;
 }
-.sub-title{
+
+.sub-title {
     margin-bottom: 60px;
 }
-.service-list div{
+
+.service-list div {
     background-color: #262626;
     padding: 40px;
     font-size: 16px;
@@ -255,22 +257,26 @@ nav ul li a:hover::after{
     -ms-border-radius: 18px;
     -o-border-radius: 18px;
 }
-.service-list div i{
+
+.service-list div i {
     font-size: 50px;
     margin-bottom: 30px;
 }
-.service-list div h2{
+
+.service-list div h2 {
     font-size: 30px;
     font-weight: 500;
     margin-bottom: 15px;
 }
-.service-list div a{
+
+.service-list div a {
     text-decoration: none;
     color: #30cb05;
     font-size: 18px;
     margin-top: 20px;
     display: inline-block;
 }
+
 .service-list div:hover {
     background: #64492d;
     transform: translateY(20px);
@@ -284,6 +290,40 @@ nav ul li a:hover::after{
     -ms-transition: 0.3s;
     -o-transition: 0.3s;
 }
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+    .service-list div {
+        padding: 30px;
+        font-size: 14px;
+    }
+    .service-list div i {
+        font-size: 40px;
+    }
+    .service-list div h2 {
+        font-size: 24px;
+    }
+    .service-list div a {
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 480px) {
+    .service-list div {
+        padding: 20px;
+        font-size: 12px;
+    }
+    .service-list div i {
+        font-size: 30px;
+    }
+    .service-list div h2 {
+        font-size: 20px;
+    }
+    .service-list div a {
+        font-size: 14px;
+    }
+}
+
 
 
 
@@ -416,165 +456,150 @@ nav ul li a:hover::after{
 
 /* -----------------------------------myFavSuperheroes------------------ */
 @import url("https://fonts.googleapis.com/css2?family=Asap:ital,wght@0,400;1,400");
-h1{
+
+h1 {
     text-align: center;
+    font-size: 1.5rem;
+    margin: 20px;
 }
-.containerss{
-    
+
+.containerss {
     box-sizing: border-box;
-    margin: 0 0 30px 0;
     font-family: 'Asap', 'Poppins', sans-serif;
     text-shadow: #000 0 0 10px;
     display: flex;
     flex-direction: column;
-    width: 100vw;
-    height: 40vh;
+    width: 100%;
+    height: auto;
     background: #111;
-    margin-bottom: 50px;
-  
-  @media (min-width: 1024px) {
-    flex-direction: row;
+    margin: 20px 0;
+    overflow: hidden;
 }
+
+@media (min-width: 768px) {
+    .containerss {
+        flex-direction: row;
+        height: 50vh;
+    }
 }
+
 .item {
     position: relative;
-    flex: calc(100vw / 6) 1 1;
+    flex: 1;
     background-size: cover;
+    background-position: center;
     overflow: hidden;
     filter: saturate(90%);
-    transition: 1s;
+    transition: all 0.5s ease;
+    min-height: 150px;
 }
+
 .item:before {
     content: "";
     position: absolute;
-    /* inset: 0; */
-    background: linear-gradient(25deg, rgba(0,0,0,1), rgba(0,0,0,0));
+    inset: 0;
+    background: linear-gradient(25deg, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0));
+    z-index: 1;
 }
+
 .item:not(:last-child) {
     border-bottom: 1px solid #ccc;
     animation: borderPulse 5s infinite;
-    
-    @media (min-width: 1024px) {
-      border-right: 1px solid #ccc;
-      border-bottom: none;
+}
+
+@media (min-width: 768px) {
+    .item:not(:last-child) {
+        border-bottom: none;
+        border-right: 1px solid #ccc;
     }
-  }
-  .item:hover {
-    flex-basis: 40%;
+}
+
+.item:hover {
+    flex-basis: 50%;
     filter: saturate(120%);
-    
-    @media (min-width: 1024px) {
-      flex-basis: 75%;
+}
+
+@media (min-width: 1024px) {
+    .item:hover {
+        flex-basis: 75%;
     }
-    
-    .quote {
-      opacity: 1;
-      transform: translateX(0);
-    }
-  }
-  
-  .item:nth-child(1) {
-    background-image: url(assets/papaji.jpg);
-    background-position: 70% 15%;
-  }
-  
-  .item:nth-child(2) {
-    background-image: url(assets/iron-man\ 02.jpeg);
-    background-position: 60% 30%;
-  }
-  
-  .item:nth-child(3) {
-    background-image: url(assets/groot.jpg);
-    background-position: 80% 8%;
-  }
-  
-  .item:nth-child(4) {
-    background-image: url(assets/caption-america.jpg);
-    background-position: 50% 8%;
-  }
-  
-  .item:nth-child(5) {
-    background-image: url(assets/thanos.jpg);
-    background-position: 45% 25%;
-  }
-  
-  .item:nth-child(6) {
-    background-image: url(assets/dr.strange.jpg);
-    background-position: 65% 2%;
-  }
-  
-  .quote {
+}
+
+.quote {
     position: absolute;
     color: #fff;
-    bottom: 35%;
-    left: 5rem;
-    width: calc(100% - 10rem);
+    bottom: 20%;
+    left: 5%;
+    width: 90%;
     opacity: 0;
-    transition: 1s;
+    transition: all 0.5s ease;
     transform: translateX(50%);
-    
-    @media (min-width: 512px) {
-      left: 15%;
-      bottom: 35%;
-      width: 20vw;
+    z-index: 2;
+    font-size: 1rem;
+}
+
+.item:hover .quote {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+@media (min-width: 768px) {
+    .quote {
+        font-size: 1.2rem;
+        left: 10%;
+        width: 80%;
     }
-    
-    @media (min-width: 1024px) {
-      left: 15%;
-      bottom: 35%;
-      width: 30vw;
+}
+
+@media (min-width: 1024px) {
+    .quote {
+        font-size: 1.4rem;
+        left: 15%;
+        width: 60%;
     }
-    
-    p {
-      position: relative;
-      display: inline-block;
-      margin-bottom: 1.7rem;
-      font-size: 1.4rem;
-      text-wrap: balance;
-      font-style: italic;
-      
-      &:before, &:after {
-        position: absolute;
-        font-size: 5.5rem;
-        opacity: .6;
-      }
-      
-      &:before {
-        content: "“";
-        top: 4rem;
-        left: -2rem;
-        transform: translate(-100%, -100%);
-      }
-      
-      &:after {
-        content: "”";
-        bottom: 2rem;
-        right: -2rem;
-        transform: translate(100%, 100%);
-      }
-    }
-    
-    span {
-      position: absolute;
-      bottom: -2rem;
-      right: 0;
-      text-align: right;
-      font-size: 1.2rem;
-      font-weight: bold;
-      transform: translate(4rem, 100%);
-      
-      &:before {
-        content: "—";
-        margin-right: .7rem;
-      }
-    }
-  }
-  
-  @keyframes borderPulse{
+}
+
+.quote p {
+    margin-bottom: 1.5rem;
+    font-style: italic;
+}
+
+.quote span {
+    display: block;
+    text-align: right;
+    font-weight: bold;
+}
+
+.item:nth-child(1) {
+    background-image: url('assets/personal_img.jpg');
+}
+
+.item:nth-child(2) {
+    background-image: url('assets/ironman.jpg');
+}
+
+.item:nth-child(3) {
+    background-image: url('assets/naruto.jpg');
+}
+
+.item:nth-child(4) {
+    background-image: url('assets/spiderman.jpg');
+}
+
+.item:nth-child(5) {
+    background-image: url('assets/thanos.jpg');
+}
+
+.item:nth-child(6) {
+    background-image: url('assets/master-oogway.jpg');
+}
+
+@keyframes borderPulse {
     0%, 100% { border-color: rgba(204, 204, 204, 1); }
     25%, 75% { border-color: rgba(204, 204, 255, 0.9); }
     50% { border-color: rgba(204, 204, 255, 0.5); }
-  }
+}
+
 /* -----------------------------------EndOfmyFavSuperheroes------------------ */
 /* ------------------------contact------------------------ */
 .contact-left{
