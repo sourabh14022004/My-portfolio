@@ -185,4 +185,20 @@
     </div>
 
 </body>
+<script>
+    function opentab(tabname) {
+    let tablinks = document.getElementsByClassName("tab-links");
+    let tabcontents = document.getElementsByClassName("tab-contents");
+
+    for (let link of tablinks) {
+        link.classList.remove("active-links");
+    }
+    for (let content of tabcontents) {
+        content.classList.remove("active-tab");
+    }
+
+    document.querySelector(`[onclick="opentab('${tabname}')"]`).classList.add("active-links");
+    document.getElementById(tabname).classList.add("active-tab");
+}
+</script>
 </html>
