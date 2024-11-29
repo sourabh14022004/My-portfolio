@@ -669,34 +669,3 @@ form .btn2{
 }
 
     
-/* }
-
-.get-in-touch{
-    display: inline;
-}
-.get-in-touch .dynamic-text{
-    
-}
-.dynamic-text li{
-    color: hsl(341, 67%, 44%);
-    list-style: none;
-}
-.dynamic-text li span{
-    position: relative;
-}
-.dynamic-text li span::after{
-    margin-top: 70px;
-    content: "";
-    position: absolute;
-    left: 0;
-    height: 100%;
-    width: 100%;
-    background: #080808;
-    border-left: 2px solid #b92554 ;
-    animation: typing 1s steps(30) infinite;
-    -webkit-animation: typing 1s steps(30) infinite;
-    
-}
-/* @keyframes typing {
-    100%{
-        l */
