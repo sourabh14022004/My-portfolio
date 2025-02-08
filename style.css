@@ -1,5 +1,3 @@
-
-
 /* ----------------------------------------end of submit button-------------------------- */
 *{
     margin: 0;
@@ -7,26 +5,13 @@
     font-family: "Poppins", sans-serif;
     box-sizing: border-box;
     ::-webkit-scrollbar{
+        display: none;
         width: 10px;
-/* ----------------------adding scrollbar----------- */
-    /* }
-    ::-webkit-scrollbar-track{
-        background-color: gray;
-        border-radius: 10px;
-        -webkit-border-radius: 10px;
-        -moz-border-radius: 10px;
-        -ms-border-radius: 10px;
-        -o-border-radius: 10px;
-        height: 30px;
-}
-::-webkit-scrpllbar-thumb{
-    background-color: red;
-} */
-/* -----------------end of scrollbar propertied-------------------- */
-}
+    }
 }
 html{
     scroll-behavior: smooth;
+
 }
 body{
     background: #080808;
@@ -88,6 +73,18 @@ nav ul li a::after{
 nav ul li a:hover::after{
     width: 100%;
 }
+
+@keyframes anim {
+    100%{
+        text-shadow: 0 0 60px rgba(209, 12, 203, 0.5);
+    }
+}
+@keyframes anime {
+    100%{
+        text-shadow: 0 0 60px rgba(28, 12, 209, 0.5);
+    }
+}
+
 .header-text{
     margin-top: 20%;
     font-size: 30px;   
@@ -100,17 +97,11 @@ nav ul li a:hover::after{
     background:linear-gradient(to right, rgb(246, 78, 48), rgb(100, 240, 93));
     color: transparent;
     -webkit-background-clip: text;
-
-
-    text-shadow: 0 0 100px rgb(225, 11, 11);
+    /* text-shadow: 0 0 10px  rgb(225, 11, 11);  */
     animation: anime 1s infinite alternate;
     -webkit-animation: anim 1s infinite alternate;
 }
-@keyframes anim {
-    100%{
-        text-shadow: 0 0 60px rgba(28, 12, 209, 0.5);
-    }
-}
+
 .header-text h1 span{
     color: rgb(198, 163, 163);
 }
@@ -127,6 +118,67 @@ nav ul li a:hover::after{
     -webkit-animation: anim 1s infinite alternate;
 }
 
+.animated-text {
+    text-shadow: none;
+}
+.animated-text span{
+    position: relative;
+
+}
+#noShadow {
+    text-shadow: none;
+}
+.animated-text span::before{
+    content: "Youtuber";
+    color: #ff7f50;
+    animation: words 20s infinite;
+}
+.animated-text span::after{
+    content: "";
+    position: absolute;
+    width: calc(100% + 8px);
+    height: 100%;
+    background-color: #080808;
+    border-left: 2px solid #ff7f50;
+    right: -8px;
+    animation: cursor .8s infinite, typing 20s steps(14) infinite;
+}
+
+@keyframes cursor {
+    to{
+        border-left: 2px solid #ff7f5000;
+    }
+}
+
+@keyframes words {
+    0%,20%{
+        content: "Developer";
+    }
+    21%,40%{
+        content: "Designer";
+    }
+    41%,60%{
+        content: "Student";
+    }
+    61%,80%{
+        content: "Youtuber";
+    }
+    81%,100%{
+        content: "Gamer";
+    }
+}
+
+@keyframes typing {
+    10%,15%,30%,35%,50%,55%,70%,75%,90%,95%{
+        width: 0;
+    }
+    5%,20%,25%,40%,45%,60%,65%,80%,85%{
+        width: calc(100% + 8px);
+    }
+}
+
+
+
 
 
 
@@ -138,8 +190,6 @@ nav ul li a:hover::after{
     /* background-image: url(assets/mylogo.1.png); */
     
 }
-
-
 .row{
     display: flex;
     justify-content: space-between;
@@ -328,99 +378,7 @@ nav ul li a:hover::after{
 
 
 /* ---------------------------portfolio---------------------------- */
-#portfolio{
-    height: auto;
-    margin: 0;
-    padding: 30px 0;
-    justify-content: center;
-    align-items: center;
-}
-.work-list{
-    height: 42vh;
-    width: 110%;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-    grid-gap: 10px;
-    /* margin: 30px; */
-    margin-bottom: 0;
-    color: #ffffff;
-    font-size: 20px;
-    
-}
-.work-list h3{
-    color: #c5e865;
-}
-.work{
-    border-radius: 10px;
-    position: relative;
-    overflow: hidden;
-}
-.work img{
-    width: 80%;
-    height: 100%;
-    border-radius: 20px;
-    display: block;
-    transition: transform 0.5s;
-    -webkit-border-radius: 20px;
-    -moz-border-radius: 20px;
-    -ms-border-radius: 20px;
-    -o-border-radius: 20px;
-    -webkit-transition: transform 0.5s;
-    -moz-transition: transform 0.5s;
-    -ms-transition: transform 0.5s;
-    -o-transition: transform 0.5s;
-}
-.layer{
-    width: 100%;
-    height: 0px;
-    background: linear-gradient(rgba(0,0,0,0.6),#cb2c5f);
-    border-radius: 10px;
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    overflow: hidden;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    padding: 0 40px;
-    text-align: center;
-    transition: height 0.5s;
-    -webkit-transition: height 0.5s;
-    -moz-transition: height 0.5s;
-    -ms-transition: height 0.5s;
-    -o-transition: height 0.5s;
-    -webkit-border-radius: 10px;
-    -moz-border-radius: 10px;
-    -ms-border-radius: 10px;
-    -o-border-radius: 10px;
-}
-.layer h3{
-    font-weight: 500;
-    margin-bottom: 25px;
-}
-.layer a{
-    margin-top: 20px;
-    color: #b92554;
-    text-decoration: none;
-    font-size: 18px;
-    line-height: 60px;
-    background: #9585e2;
-    width: 60px;
-    height: 60px;
-    border-radius: 50%;
-    text-align: center;
-}
-.work:hover img{
-    transform: scale(1.4);
-    -webkit-transform: scale(1.4);
-    -moz-transform: scale(1.4);
-    -ms-transform: scale(1.4);
-    -o-transform: scale(1.4);
-}
-.work:hover .layer{
-    height: 100%;
-}
+
 .btn{
     display: block;
     margin: 45px auto;
@@ -430,12 +388,12 @@ nav ul li a:hover::after{
     border-radius: 6px;
     text-decoration: none;
     color: #fff;
-    transition: background 0.5s;
+    transition:  0.3s;
 }
 .btn:hover{
     background: #ff004f;
     background: transparent;
-    box-shadow: 0 0 20px 5px rgb(36, 226, 226);
+    box-shadow: 0 0 20px 2px rgb(36, 226, 226);
 }
 
 
@@ -448,11 +406,7 @@ nav ul li a:hover::after{
     text-shadow: 0 0 60px rgb(236, 10, 10);
     animation: anime 1s infinite alternate;
 }
-@keyframes anime {
-    100%{
-        text-shadow: 0 0 60px rgba(28, 12, 209, 0.5);
-    }
-}
+
 
 /* -----------------------------------myFavSuperheroes------------------ */
 @import url("https://fonts.googleapis.com/css2?family=Asap:ital,wght@0,400;1,400");
@@ -599,8 +553,9 @@ h1 {
     25%, 75% { border-color: rgba(204, 204, 255, 0.9); }
     50% { border-color: rgba(204, 204, 255, 0.5); }
 }
-
 /* -----------------------------------EndOfmyFavSuperheroes------------------ */
+
+
 /* ------------------------contact------------------------ */
 .contact-left{
     flex-basis: 35%;
@@ -611,6 +566,7 @@ a{
 }
 .contact-right{
     flex-basis: 60%;
+    padding-top: 80px;
 }
 .contact-left p{
     margin-top: 30px;
@@ -662,10 +618,122 @@ form .btn2{
     font-size: 20px;
     cursor: pointer;
 }
+.dynamic-text {
+    padding-bottom: 20px;
+
+}
 .dynamic-text li{
     color: #eecfd8;
     list-style: none;
-    margin-bottom: 5px;
+    margin-bottom: 10px;
+
 }
 
+
+/* --------------- scrolling effect ------------------------ */
+#inf-scrolling {
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.item0 {
+    width: 200px;
+    height: 50px;
+    border-radius: 6px;
+    position: absolute;
+    left: max(calc(200px * 8), 100%);
+    animation-name: animationLeft;
+    animation-duration: 30s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+  }
+.item0 p {
+    color: rgba(255, 255, 255, 0.891);
+    font-size: 2rem;
+    text-align: center;
+    line-height: 50px;
+    text-transform: capitalize;
+}
+.item01 {
+    width: 200px;
+    height: 50px;
+    border-radius: 6px;
+    position: absolute;
+    right: max(calc(200px * 8), 100%);
+    animation-name: animationRight;
+    animation-duration: 30s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+.item01 p {
+    color: rgba(255, 255, 255, 0.892);
+    font-size: 2rem;
+    text-align: center;
+    line-height: 50px;
+    text-transform: capitalize;
     
+
+}
+.wrapper1 {
+    width: 90%;
+    max-width: 1536px;
+    margin-inline: auto;
+    position: relative;
+    height: 50px;
+    overflow: hidden;
+    margin-bottom: 5px;
+    mask-image: linear-gradient(
+        to right,
+        rgba(0, 0, 0, 0),
+        rgba(0, 0, 0, 1) 20%,
+        rgba(0, 0, 0, 1) 80%,
+        rgba(0, 0, 0, 0)
+    );
+
+
+}
+@keyframes animationLeft {
+    to {
+        left: -200px;
+    }   
+}
+@keyframes animationRight {
+    to {
+        right: -200px;
+    }
+}
+@keyframes mymove {
+    50% {text-shadow: 0px 0px 10px rgb(4, 213, 255);}
+  }
+.item1 {
+    animation-delay: calc(30s / 8 * (8 - 1) * -1);
+  }
+  
+  .item2 {
+    animation-delay: calc(30s / 8 * (8 - 2) * -1);
+  }
+  
+  .item3 {
+    animation-delay: calc(30s / 8 * (8 - 3) * -1);
+  }
+  
+  .item4 {
+    animation-delay: calc(30s / 8 * (8 - 4) * -1);
+  }
+  
+  .item5 {
+    animation-delay: calc(30s / 8 * (8 - 5) * -1);
+  }
+  
+  .item6 {
+    animation-delay: calc(30s / 8 * (8 - 6) * -1);
+  }
+  
+  .item7 {
+    animation-delay: calc(30s / 8 * (8 - 7) * -1);
+  }
+  
+  .item8 {
+    animation-delay: calc(30s / 8 * (8 - 8) * -1);
+  }
+/* --------------- end of scrolling effect ------------------------ */
