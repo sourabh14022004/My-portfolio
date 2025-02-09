@@ -97,6 +97,7 @@ nav ul li a:hover::after{
     background:linear-gradient(to right, rgb(246, 78, 48), rgb(100, 240, 93));
     color: transparent;
     -webkit-background-clip: text;
+
     /* text-shadow: 0 0 10px  rgb(225, 11, 11);  */
     animation: anime 1s infinite alternate;
     -webkit-animation: anim 1s infinite alternate;
@@ -204,14 +205,14 @@ nav ul li a:hover::after{
    }
 .about-col-1{
     /* flex-basis: 35%; */
-    margin-left: 12px;
+    margin-left: 30px;
     display: flex;
     background-color: rgb(192, 185, 185);
-    padding-left: 55px;
+    padding-right: 6px;
     max-height: 600px;
-    max-width: 550px;
+    max-width: 450px;
     border-radius: 40px;
-    padding: 10px;
+    /* padding: 10px; */
     -o-border-radius: 40px;
     animation: shadows 2s infinite;
 }
@@ -280,7 +281,7 @@ nav ul li a:hover::after{
 
 .service-list {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     margin: 10px;
     grid-gap: 30px;
     border-radius: 40px;
@@ -297,7 +298,7 @@ nav ul li a:hover::after{
 }
 
 .service-list div {
-    background-color: #262626;
+    /* background-color: #262626; */
     padding: 40px;
     font-size: 16px;
     font-weight: 300;
@@ -307,7 +308,25 @@ nav ul li a:hover::after{
     -ms-border-radius: 18px;
     -o-border-radius: 18px;
 }
-
+.service-list #games {
+    /* box-shadow: 0px 0px 10x blue; */
+    background-image: url('assets/gameimg.webp');
+    background-size: cover; /* Ensures the image covers the entire div */
+    background-position: center; /* Centers the image */
+    background-repeat: no-repeat; /* Prevents repeating */
+}
+.service-list #video-editing {
+    background-image: url('assets/videoEdite.jpg');
+    background-size: cover; /* Ensures the image covers the entire div */
+    background-position: center; /* Centers the image */
+    background-repeat: no-repeat; /* Prevents repeating */
+}
+.service-list #wed-design {
+    background-image: url('assets/webDesign1.jpg');
+    background-size: cover; /* Ensures the image covers the entire div */
+    background-position: center; /* Centers the image */
+    background-repeat: no-repeat; /* Prevents repeating */
+}
 .service-list div i {
     font-size: 50px;
     margin-bottom: 30px;
