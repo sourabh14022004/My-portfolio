@@ -17,12 +17,60 @@ body{
     background: #080808;
     color: #fff;
 }
+
+/* ---------bgAnimation-------------- */
+.bgAnimation {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 300vh;
+    display: grid;
+    grid-template-columns: repeat(30, 1fr);
+    grid-template-rows: repeat(40, 1fr);
+    background: black;
+    filter: saturate(2);
+    overflow: hidden;
+}
+.colorBox {
+    z-index: 2;
+    filter: brightness(1.1);
+    transition: 2s ease;
+    position: relative;
+    margin: 2px;
+    background: black;
+}
+.colorBox:hover{
+    background: #00ffff;
+    transition-duration: 0s;
+}
+.backgroundAnim{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 40px;
+    background: #00bfff;
+    filter: blur(50px);
+    animation: animBack 6s linear infinite;
+}
+
+@keyframes animBack {
+    0%{
+        top: -60px;
+    }
+    100%{
+        top: 120%;
+    }
+}
+/* ----------end of animated background---------- */
 #header {
     width: 100%;
-    height: 120vh;
+    height: 100%;
     background-image:url(assets/Untitled\ design.png) ;
     background-size: cover;
     background-position: center;
+    
 }
 .container{
     padding: 10px 10%;
@@ -32,9 +80,11 @@ nav{
     align-items: center;
     justify-content: space-between;
     flex-wrap: wrap;
+    position: relative;
+    cursor: pointer;
+    pointer-events: all;
 }
 .logo{
-    /* height: 1000px; */
     width: 140px;
     border-radius: 50%;
     -webkit-border-radius: 50%;
@@ -87,7 +137,10 @@ nav ul li a:hover::after{
 
 .header-text{
     margin-top: 20%;
-    font-size: 30px;   
+    font-size: 30px;  
+    position: relative;
+    cursor: pointer;
+    pointer-events: all; 
 }
 .header-text h1{
     font-size: 60px;
@@ -97,14 +150,18 @@ nav ul li a:hover::after{
     background:linear-gradient(to right, rgb(246, 78, 48), rgb(100, 240, 93));
     color: transparent;
     -webkit-background-clip: text;
-
-    /* text-shadow: 0 0 10px  rgb(225, 11, 11);  */
     animation: anime 1s infinite alternate;
     -webkit-animation: anim 1s infinite alternate;
+    position: relative;
+    cursor: pointer;
+    pointer-events: all;
 }
 
 .header-text h1 span{
     color: rgb(198, 163, 163);
+    position: relative;
+    cursor: pointer;
+    pointer-events: all;
 }
 .header-text p{
     font-size: 50px;
@@ -117,13 +174,22 @@ nav ul li a:hover::after{
     text-shadow: 0 0 60px rgb(141, 56, 56);
     animation: anime 1s infinite alternate;
     -webkit-animation: anim 1s infinite alternate;
+    position: relative;
+    cursor: pointer;
+    pointer-events: all;
 }
 
 .animated-text {
     text-shadow: none;
 }
+.animated-text p {
+    position: relative;
+    cursor: pointer;
+    pointer-events: all;
+}
 .animated-text span{
     position: relative;
+    
 
 }
 #noShadow {
@@ -133,6 +199,10 @@ nav ul li a:hover::after{
     content: "Youtuber";
     color: #ff7f50;
     animation: words 20s infinite;
+    position: relative;
+    cursor: pointer;
+    pointer-events: all;
+    
 }
 .animated-text span::after{
     content: "";
@@ -143,6 +213,7 @@ nav ul li a:hover::after{
     border-left: 2px solid #ff7f50;
     right: -8px;
     animation: cursor .8s infinite, typing 20s steps(14) infinite;
+    
 }
 
 @keyframes cursor {
@@ -185,7 +256,7 @@ nav ul li a:hover::after{
 
 /* ---------about-------- */
 #about{
-    padding: 10px 5px;
+    padding-top: 250px;
     color: #ababab;
     margin-bottom: 20px;
     /* background-image: url(assets/mylogo.1.png); */
@@ -195,6 +266,7 @@ nav ul li a:hover::after{
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
+
 }
 /* -__--___-_______----___--_-adjust-height and width of Image_--_____--_-__-_--_-_--___ */
 @keyframes shadows {
@@ -215,6 +287,9 @@ nav ul li a:hover::after{
     /* padding: 10px; */
     -o-border-radius: 40px;
     animation: shadows 2s infinite;
+    position: relative;
+    cursor: pointer;
+    pointer-events: all;
 }
 .about-col-1 img{
     width: 110%;
@@ -224,6 +299,9 @@ nav ul li a:hover::after{
 }
 .about-col-2{
     flex-basis: 60%;  
+    position: relative;
+    cursor: pointer;
+    pointer-events: all;
 }
 .sub-title{
     font-size: 60px;
@@ -277,6 +355,7 @@ nav ul li a:hover::after{
     padding: 3px;
     margin: 1px 20px 30px 4px;
     margin-bottom: 40px;
+    position: relative;
 }
 
 .service-list {
@@ -285,8 +364,8 @@ nav ul li a:hover::after{
     margin: 10px;
     grid-gap: 30px;
     border-radius: 40px;
-    background: linear-gradient(145deg, #363535, #1a111168);
-    box-shadow: 10px 10px 20px #301e1e, -10px -10px 20px #2c2626;
+    /* background: linear-gradient(145deg, #363535, #1a111168); */
+    /* box-shadow: 10px 10px 20px #301e1e, -10px -10px 20px #2c2626; */
     -webkit-border-radius: 40px;
     -moz-border-radius: 40px;
     -ms-border-radius: 40px;
