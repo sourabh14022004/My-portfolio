@@ -230,7 +230,8 @@
                         
                     </div>
                     
-                    <form name="submit-to-google-sheet">
+                    <form action="https://api.web3forms.com/submit" method="POST" name="submit-to-google-sheet">
+                        <input type="hidden" name="access_key" value="9589c44a-5a58-4344-a06b-3f40a6ef995d">
                         <input type="text" name = "Name" placeholder="Your Name *" required>
                         <input type="email" name = "Email" placeholder="Your Email *" required>
                         <textarea name="Message" rows="6" placeholder="Your Message *"></textarea>
